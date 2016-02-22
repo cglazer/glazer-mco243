@@ -1,11 +1,22 @@
 package glazer.mco243;
 
+import java.io.IOException;
+
+import microprocessorSimulation.MicroprocessorSimulation;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 public class TestMicroprocessor {
- 
-@Test
- public void TestMicroprocessor(){
-	
- }
+
+	@Test
+	public void TestMicroprocessor() throws IOException {
+		MicroprocessorSimulation simulate = new MicroprocessorSimulation();
+		String inputCode = "040563B14004220FF31FF041320FE31FE00C2042314200032041314170080000F03000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001";
+		char[] instructionSet = inputCode.toCharArray();
+		instructionSet = simulate.execute(instructionSet);
+		String myOutput = String.valueOf(instructionSet);
+		String correctOutput = "040563B14004220FF31FF041320FE31FE00C204231420003204131417008000011F0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E1";
+		Assert.assertEquals(correctOutput, myOutput);
+	}
 }

@@ -8,6 +8,7 @@ public class MicroprocessorSimulationMain {
 	public static void main(String[] args) {
 		String inputCode = null;
 		char[] instructionSet;
+		String output;
 		MicroprocessorSimulation simulate = new MicroprocessorSimulation();
 		try {
 			BufferedReader inputFile = new BufferedReader(new FileReader(
@@ -15,10 +16,8 @@ public class MicroprocessorSimulationMain {
 			while ((inputCode = inputFile.readLine()) != null) {
 				instructionSet = inputCode.toCharArray();
 				instructionSet = simulate.execute(instructionSet);
-				for (int i = 0; i < instructionSet.length; i++) {
-					System.out.print(instructionSet[i]);
-				}
-				System.out.println();
+				output=String.valueOf(instructionSet);
+				System.out.print(output+"\n");
 			}
 			inputFile.close();
 		} catch (IOException e) {
