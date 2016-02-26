@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestMicroprocessor {
 
 	@Test
-	public void TestMicroprocessor() throws IOException {
+	public void TestProcessor() throws IOException {
 		Processor simulate = new Processor();
 		String inputCode = "040563B14004220FF31FF041320FE31FE00C2042314200032041314170080000F03000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001";
 		char[] instructionSet = inputCode.toCharArray();
