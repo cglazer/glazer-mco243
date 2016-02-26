@@ -1,6 +1,6 @@
-package microprocessorSimulation;
+package glazer.microprocessorSimulator;
 
-public class MicroprocessorSimulation {
+public class Processor {
 	private int a;
 	private int b;
 	private int index;
@@ -10,7 +10,7 @@ public class MicroprocessorSimulation {
 	String forB;
 	int num;
 
-	public MicroprocessorSimulation() {
+	public Processor() {
 	}
 
 	public char[] execute(char[] instructionSet) {

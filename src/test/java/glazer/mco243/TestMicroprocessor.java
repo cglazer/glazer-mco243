@@ -1,8 +1,8 @@
 package glazer.mco243;
 
-import java.io.IOException;
+import glazer.microprocessorSimulator.Processor;
 
-import microprocessorSimulation.MicroprocessorSimulation;
+import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +11,7 @@ public class TestMicroprocessor {
 
 	@Test
 	public void TestMicroprocessor() throws IOException {
-		MicroprocessorSimulation simulate = new MicroprocessorSimulation();
+		Processor simulate = new Processor();
 		String inputCode = "040563B14004220FF31FF041320FE31FE00C2042314200032041314170080000F03000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001";
 		char[] instructionSet = inputCode.toCharArray();
 		instructionSet = simulate.execute(instructionSet);
