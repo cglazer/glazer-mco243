@@ -1,9 +1,7 @@
 package glazer.mco243;
 
 import glazer.microprocessorSimulator.Processor;
-
 import java.io.IOException;
-
 import org.junit.Assert;
 import org.junit.Test;
 

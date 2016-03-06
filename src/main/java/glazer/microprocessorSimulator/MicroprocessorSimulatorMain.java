@@ -11,7 +11,6 @@ public class MicroprocessorSimulatorMain {
 		String output;
 		Processor simulate = new Processor();
 		try {
-
 			// BufferedReader inputFile = new BufferedReader(new FileReader(
 			// "mach.in"));
 			BufferedReader inputFile = new BufferedReader(new InputStreamReader(System.in));
