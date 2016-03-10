@@ -24,11 +24,11 @@ public class Compiler {
 		switch (tokens[0]) {
 		case "LD":
 			this.machineCode.append("0");
-			this.machineCode.append(tokens[1]);
+			this.machineCode.append(convertToHex(tokens[1]));
 			break;
 		case "ST":
 			this.machineCode.append("1");
-			this.machineCode.append(tokens[1]);
+			this.machineCode.append(convertToHex(tokens[1]));
 			break;
 		case "SWP":
 			this.machineCode.append("2");
@@ -44,11 +44,11 @@ public class Compiler {
 			break;
 		case "BZ":
 			this.machineCode.append("6");
-			this.machineCode.append(tokens[1]);
+			this.machineCode.append(convertToHex(tokens[1]));
 			break;
 		case "BR":
 			this.machineCode.append("7");
-			this.machineCode.append(tokens[1]);
+			this.machineCode.append(convertToHex(tokens[1]));
 			break;
 		case "STP":
 			this.machineCode.append("8");
@@ -57,6 +57,15 @@ public class Compiler {
 			this.machineCode.append(tokens[1]);
 			break;
 		}
+	}
+
+	public String convertToHex(String code) {
+		int decimal = Integer.parseInt(code);
+		String hex = Integer.toString(decimal, 16).toUpperCase();
+		if (hex.length() == 1) {
+			return "0" + hex;
+		}
+		return hex;
 	}
 
 	private String getMachineCode() {
